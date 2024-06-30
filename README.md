@@ -40,4 +40,8 @@ and click on three dots and get the command and run it in the terminal
 
 gcloud container clusters get-credentials my-cluster --region us-central1 --project orbital-age-427911-k0
 
+gcloud container clusters get-credentials my-cluster --region us-central1 --project orbital-age-427911-k0
+
+go to i am account, services and accounts,kubernets engine or certification-manage keys and addkey-newkey-create
+
 ```

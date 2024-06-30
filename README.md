@@ -33,4 +33,11 @@ docker push us-central1-docker.pkg.dev/orbital-age-427911-k0/flask-pdf/flaskdemo
 github action for automation
 https://docs.github.com/en/actions/learn-github-actions/understanding-github-actions
 
+
+create kubernetes cluster
+
+and click on three dots and get the command and run it in the terminal
+
+gcloud container clusters get-credentials my-cluster --region us-central1 --project orbital-age-427911-k0
+
 ```

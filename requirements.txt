@@ -1,0 +1,9 @@
+flask
+langchain
+pdfminer.six
+sentence-transformers
+faiss-cpu
+openai
+pypdf
+langchain_community
+Werkzeug

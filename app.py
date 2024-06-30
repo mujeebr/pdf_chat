@@ -7,12 +7,15 @@ from langchain_community.embeddings import HuggingFaceEmbeddings
 from langchain_community.vectorstores import FAISS
 from langchain_community.llms import OpenAI
 from langchain.chains import RetrievalQA
+import config
 
+api_key = config.api_key
 
+secret=config.secret
 app = Flask(__name__)
 app.config['UPLOAD_FOLDER'] = 'uploads'
 app.config['ALLOWED_EXTENSIONS'] = {'pdf'}
-app.secret_key = 'aP8#4sJkL0bN2hUqW9eXzR5cMfYt1gO'  # Your random secret key
+app.secret_key = secret  # Your random secret key
 
 # Set up logging
 logging.basicConfig(level=logging.INFO)
@@ -77,7 +80,7 @@ def process_file(filename):
         vectorstore = FAISS.from_documents(text_chunks, embeddings)
 
         # Initialize OpenAI LLM
-        llm = OpenAI(api_key='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')
+        llm = OpenAI(api_key=api_key)
 
         # Create QA chain
         qa = RetrievalQA.from_chain_type(llm=llm, chain_type="stuff", retriever=vectorstore.as_retriever())
@@ -103,7 +106,7 @@ def ask_question():
         text_chunks = text_splitter.split_documents(data)
         embeddings = HuggingFaceEmbeddings(model_name="sentence-transformers/all-MiniLM-L6-v2")
         vectorstore = FAISS.from_documents(text_chunks, embeddings)
-        llm = OpenAI(api_key='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')
+        llm = OpenAI(api_key=api_key)
         qa = RetrievalQA.from_chain_type(llm=llm, chain_type="stuff", retriever=vectorstore.as_retriever())
 
         answer = qa.run(question)

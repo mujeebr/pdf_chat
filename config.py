@@ -1,0 +1,2 @@
+api_key="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"
+secret="aP8#4sJkL0bN2hUqW9eXzR5cMfYt1gO"

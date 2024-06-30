@@ -44,4 +44,12 @@ gcloud container clusters get-credentials my-cluster --region us-central1 --proj
 
 go to i am account, services and accounts,kubernets engine or certification-manage keys and addkey-newkey-create
 
+store the secret keys in github actions
+
+push the data into github for trigger
+
+kubectl get po
+
+kubectl get svc
+
 ```
